@@ -18,7 +18,7 @@ public interface MedicoRepository extends JpaRepository<Medico,Long> {
         select c.medico.id from Consulta c 
         where 
         c.data=:fecha 
-        )
+        ) 
     """)
     List<Medico> selecionarMedicoConEspecialidadEnFecha(Especialidad especialidad, LocalDateTime fecha);
 
@@ -27,4 +27,5 @@ public interface MedicoRepository extends JpaRepository<Medico,Long> {
         WHERE m.id =:idMedico
     """)
     Boolean findActivoById(Long idMedico);
+
 }
